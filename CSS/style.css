@@ -1,5 +1,5 @@
 body{
-    margin: 0%;
+    margin: 0;
     background-color: rgb(49, 47, 43);
     font-family: "Chess Sans", sans-serif;
 }
@@ -38,6 +38,15 @@ header{
     text-shadow: 0px 0px 5px white;
 }
 
+.play{
+    position: absolute;
+    right: 40%;
+    top: 35%;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: color 0.2s, text-shadow 0.2s;
+}
+
 .practice{
     position: absolute;
     right: 30%;
@@ -65,27 +74,181 @@ header{
     transition: color 0.2s, text-shadow 0.2s;
 }
 
-.practice:hover, .puzzles:hover, .about:hover{
+.practice:hover, .puzzles:hover, .about:hover, .play:hover{
     cursor: pointer;
-    color: rgb(123, 195, 35);
+    color: rgb(185, 242, 115);
     text-shadow: 0px 0px 5px white;
 }
 
 .img1{
     position: absolute;
-    right: 5%;
-    top: 35%;
-    width: 37.5%;
-    height: 75%;
+    right: 10%;
+    top: 25%;
+    width: 30%;
+    height: 60%;
 }
 
 .p1{
     font-size: 2.8rem;
-    font-weight: 700;
+    font-weight: 800;
     position: absolute;
     left: 10%;
-    top: 40%;
+    top: 30%;
     color: rgb(255, 255, 255);
     font-size: 30px;
     line-height: 150%;
 }
+
+.p2{
+    font-size: 1.5rem;
+    position: absolute;
+    left: 10%;
+    top: 47.5%;
+    color: rgb(188, 186, 186);
+    font-size: 20px;
+    line-height: 150%;
+    font-weight: 600;
+}
+
+.button1{
+    position: absolute;
+    left: 15%;
+    top: 60%;
+    width: 20%;
+    height: 10%;
+    background-color: rgb(123, 195, 35);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button1:hover{
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 5px rgb(123, 195, 35);
+    transform: translateY(-2px);
+    transition: 0.5s;
+}
+
+.borderv1{
+    position: absolute;
+    left: 11%;
+    top: 100%;
+    height: 62%;
+    width: 30%;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.v1{
+    width: 100%;
+    display: block;
+}
+
+.p3{
+    font-size: 2.8rem;
+    font-weight: 800;
+    position: absolute;
+    right: 10%;
+    top: 112%;
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+}
+
+.p4{
+    font-size: 1.5rem;
+    position: absolute;
+    right: 14.5%;
+    top: 124%;
+    color: rgb(188, 186, 186);
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.button2{
+    position: absolute;
+    right: 20%;
+    top: 135%;
+    width: 20%;
+    height: 10%;
+    background-color: rgb(123, 195, 35);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button2:hover{
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 5px rgb(123, 195, 35);
+    transform: translateY(-2px);
+    transition: 0.5s;
+}
+
+.p5{
+    font-size: 230%;
+    position: absolute;
+    right: 32%;
+    top: 190%;
+    color: rgb(255, 255, 255);
+    font-weight: 800;
+}
+
+.button3{
+    position: absolute;
+    right: 40%;
+    top: 210%;
+    width: 20%;
+    height: 10%;
+    background-color: rgb(123, 195, 35);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.button3:hover{
+    cursor: pointer;
+    color: white;
+    box-shadow: 0px 0px 5px rgb(123, 195, 35);
+    transform: translateY(-2px);
+    transition: 0.5s;
+}
+
+.footer{
+    position: absolute;
+    top: 250%;
+    left: 35%;
+    text-align: center;
+    color: rgb(208, 193, 193);
+    font-size: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding-bottom: 1%;
+}
+
+.rights:hover{
+    color: rgb(110, 104, 104);
+}
+
+.tiktok:hover, .x:hover{
+    fill: rgb(218, 204, 204);
+}
+
+.youtube:hover, .instagram:hover{
+    fill: rgb(170, 22, 22);
+}
+
+
+
+
