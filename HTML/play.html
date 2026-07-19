@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Play Chess in Person</title>
+    <link rel="icon" href="../assets/icon/ChessVision_icon.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/play.css">
+    <link rel="stylesheet" href="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://unpkg.com/@chrisoakman/chessboardjs@1.0.0/dist/chessboard-1.0.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.3/chess.min.js"></script>
+</head>
+<body>
+    <header>
+        <img src="../assets/icon/ChessVision_icon.png" alt="ChessVision Icon" class="icon">
+        <h1 class="main">ChessVision</h1>
+        <span>
+           <h2><a href="HTML/play.html" class="play">Play</a></h2>
+        </span>
+        <span>
+           <h2><a href="#" class="practice">Practice</a></h2>
+        </span>
+        <span>
+            <h2><a href="#" class="puzzles">Puzzles</a></h2>
+        </span>
+        <span>
+            <h2><a href="#" class="about">About Us</a></h2>
+        </span>
+    </header>
+    <div id="board"></div>    
+    <div id="promotion-popup" class="hidden">
+
+        <div class="promotion-box">
+
+            <h2>Choose Promotion</h2>
+
+            <div class="promotion-pieces">
+
+                <img id="queen" data-piece="q" alt="">
+
+                <img id="rook" data-piece="r" alt="">
+
+                <img id="bishop" data-piece="b" alt="">
+
+                <img id="knight" data-piece="n" alt="">
+
+            </div>
+    </div>
+    <script src="../JS/script.js"></script>
+</div>
+</body>
+</html>
