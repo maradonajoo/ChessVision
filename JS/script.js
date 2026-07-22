@@ -1,3 +1,42 @@
+const whitemin = document.getElementById("white-minutes"), whiteInc = document.getElementById("white-inc");
+const blackmin = document.getElementById("black-minutes"), blackInc = document.getElementById("black-inc");
+
+whitemin.addEventListener("input", function () {
+    if (whitemin.value < 0) {
+        whitemin.value = 0;
+    }
+    else if (whitemin.value > 90) {
+        whitemin.value = 90;
+    }
+});
+
+blackmin.addEventListener("input", function () {
+    if (blackmin.value < 0) {
+        blackmin.value = 0;
+    }
+    else if (blackmin.value > 90) {
+        blackmin.value = 90;
+    }
+});
+
+whiteInc.addEventListener("input", function () {
+    if (whiteInc.value < 0) {
+        whiteInc.value = 0;
+    }
+    else if (whiteInc.value > 60) {
+        whiteInc.value = 60;
+    }
+});
+
+blackInc.addEventListener("input", function () {
+    if (blackInc.value < 0) {
+        blackInc.value = 0;
+    }
+    else if (blackInc.value > 60) {
+        blackInc.value = 60;
+    }   
+});
+
 const game = new Chess();
 
 let promotionMove = null;

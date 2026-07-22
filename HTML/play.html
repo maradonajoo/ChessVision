@@ -28,23 +28,31 @@
             <h2><a href="#" class="about">About Us</a></h2>
         </span>
     </header>
-    <div id="board"></div>    
+    <div class="settings">
+        <form action="">
+            <label for="white-username" class="white-username">White Username</label>
+            <input type="text" id="white-username" placeholder="">
+            <label for="black-username" class="black-username">Black Username</label>
+            <input type="text" id="black-username" placeholder="">
+            <label for="white-time" class="white-time">White Time</label>
+            <input type="number" id="white-minutes" placeholder="min">
+            <input type="number" id="white-inc" placeholder="inc">
+            <div class="vertical-line"></div>
+            <label for="black-time" class="black-time">Black Time</label>
+            <input type="number" id="black-minutes" placeholder="min">
+            <input type="number" id="black-inc" placeholder="inc">
+            <button type="submit" id="start-game">Play in Person</button>
+        </form>
+    </div>
+    <div id="board" class="hide"></div>    
     <div id="promotion-popup" class="hidden">
-
         <div class="promotion-box">
-
             <h2>Choose Promotion</h2>
-
             <div class="promotion-pieces">
-
                 <img id="queen" data-piece="q" alt="">
-
                 <img id="rook" data-piece="r" alt="">
-
                 <img id="bishop" data-piece="b" alt="">
-
                 <img id="knight" data-piece="n" alt="">
-
             </div>
     </div>
     <script src="../JS/script.js"></script>

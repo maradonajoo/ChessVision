@@ -125,3 +125,195 @@ header{
 .promotion-pieces img:hover{
     transform:scale(1.1);
 }
+
+.hide{
+    display: none !important;
+}
+
+.settings{
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    width: 60%;
+    height: 70%;
+    background-color: rgb(28, 27, 25);
+    border-radius: 10px;
+    border: 2px solid rgb(27, 27, 26);
+    box-shadow: 0px 0px 10px rgb(0, 0, 0);
+}
+
+.white-username{
+    position: absolute;
+    top: 12.5%;
+    left: 6%;
+    font-size: 1 rem;
+    color: rgb(161, 158, 158);
+    font-weight: 700;
+}
+
+#white-username{
+    position: absolute;
+    top: 20%;
+    left: 5%;
+    width: 30%;
+    height: 7%;
+    color: rgb(161, 158, 158);
+    background-color: rgb(53, 53, 53);
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 10px;
+    border: none;
+    outline: none;  
+    box-shadow: none;
+    padding-left: 2%;
+}
+
+.black-username{
+    position: absolute;
+    top: 12.5%;
+    right: 22%;
+    font-size: 1 rem;
+    color: rgb(161, 158, 158);
+    font-weight: 700;
+}
+
+#black-username{
+    position: absolute;
+    top: 20%;
+    right: 5%;
+    width: 30%;
+    height: 7%;
+    color: rgb(161, 158, 158);
+    background-color: rgb(53, 53, 53);
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 10px;
+    border: none;
+    outline: none;  
+    box-shadow: none;
+    padding-left: 2%;
+}
+
+.white-time{
+    position: absolute;
+    top: 40%;
+    left: 6%;
+    font-size: 1 rem;
+    color: rgb(161, 158, 158);
+    font-weight: 700;
+}   
+
+.black-time{
+    position: absolute;
+    top: 40%;
+    right: 26%;
+    font-size: 1 rem;
+    color: rgb(161, 158, 158);
+    font-weight: 700;
+}
+
+#white-minutes{
+    position: absolute;
+    top: 47%;
+    left: 5%;
+    width: 12%;
+    height: 7%;
+    color: rgb(161, 158, 158);
+    background-color: rgb(53, 53, 53);
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 10px;
+    border: none;
+    outline: none;  
+    box-shadow: none;
+    padding-left: 2%;
+}
+
+#white-inc{
+    position: absolute;
+    top: 47%;
+    left: 23%;
+    width: 12%;
+    height: 7%;
+    color: rgb(161, 158, 158);
+    background-color: rgb(53, 53, 53);
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 10px;
+    border: none;
+    outline: none;  
+    box-shadow: none;
+    padding-left: 2%;
+}
+
+#white-minutes:focus, #white-inc:focus, #black-minutes:focus, #black-inc:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+#black-minutes{
+    position: absolute;
+    top: 47%;
+    right: 23%;
+    width: 12%;
+    height: 7%;
+    color: rgb(161, 158, 158);
+    background-color: rgb(53, 53, 53);
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 10px;
+    border: none;
+    outline: none;  
+    box-shadow: none;
+    padding-left: 2%;
+}
+
+#black-inc{
+    position: absolute;
+    top: 47%;
+    right: 5%;
+    width: 12%;
+    height: 7%;
+    color: rgb(161, 158, 158);
+    background-color: rgb(53, 53, 53);
+    border: 1px solid rgb(35, 35, 35);
+    border-radius: 10px;
+    border: none;
+    outline: none;  
+    box-shadow: none;
+    padding-left: 2%;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.vertical-line {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    width: 2px;
+    height: 55%;
+    background-color: rgb(79, 73, 73);
+}
+
+#start-game{
+    position: absolute;
+    left: 40%;
+    top: 75%;
+    width: 20%;
+    height: 10%;
+    background-color: rgb(123, 195, 35);
+    color: white;
+    border: none;
+    border-radius: 100px;
+    font-size: 20px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+#start-game:hover{
+    cursor: pointer;
+    color: white;
+    box-shadow: 0 4px 15px rgba(123,195,35,.3);
+    transform: translateY(-2px);
+    transition: 0.5s;
+}
+
