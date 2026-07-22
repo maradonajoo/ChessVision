@@ -89,19 +89,12 @@ header{
 }
 
 #promotion-popup{
-
     position:fixed;
-
     inset:0;
-
     display:flex;
-
     justify-content:center;
-
     align-items:center;
-
     background:rgba(0,0,0,.6);
-
     z-index:9999;
 }
 
@@ -110,37 +103,25 @@ header{
 }
 
 .promotion-box{
-
     background:#222;
-
     padding:30px;
-
     border-radius:15px;
-
     color:white;
-
     text-align:center;
 }
 
 .promotion-pieces{
-
     display:flex;
-
     gap:20px;
-
     margin-top:20px;
 }
 
 .promotion-pieces img{
-
     width:70px;
-
     cursor:pointer;
-
     transition:.2s;
 }
 
 .promotion-pieces img:hover{
-
     transform:scale(1.1);
 }

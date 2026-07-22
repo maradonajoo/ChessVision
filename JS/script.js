@@ -28,7 +28,6 @@ const board = Chessboard("board", {
 
     position: "start",
     draggable: true,
-
     pieceTheme: "../assets/pieces/{piece}.png",
 
     onDrop: function (source, target, piece) {
@@ -37,11 +36,16 @@ const board = Chessboard("board", {
             return "snapback";
         }
 
-        const isPromotion =
-            (piece === "wP" && target[1] === "8") ||
-            (piece === "bP" && target[1] === "1");
+        const legalMove = game.moves({ verbose: true }).find(move =>
+            move.from === source &&
+            move.to === target
+        );
 
-        if (isPromotion) {
+        if (!legalMove) {
+            return "snapback";
+        }
+
+        if (legalMove.flags.includes("p")) {
 
             waitingPromotion = true;
 
@@ -56,21 +60,16 @@ const board = Chessboard("board", {
             return;
         }
 
-        const move = game.move({
+        game.move({
             from: source,
             to: target
         });
-
-        if (move === null) {
-            return "snapback";
-        }
 
     },
 
     onSnapEnd: function () {
         board.position(game.fen());
     }
-
 });
 
 document.querySelectorAll(".promotion-pieces img").forEach(function (img) {
@@ -85,15 +84,18 @@ document.querySelectorAll(".promotion-pieces img").forEach(function (img) {
             promotion: promotion
         });
 
-        if (move !== null) {
-            board.position(game.fen());
+        if (move === null) {
+            waitingPromotion = false;
+            promotionMove = null;
+            hidePromotion();
+            return;
         }
+
+        board.position(game.fen());
 
         waitingPromotion = false;
         promotionMove = null;
 
         hidePromotion();
-
     });
-
 });
