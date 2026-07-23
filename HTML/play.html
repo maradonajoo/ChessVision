@@ -27,13 +27,13 @@
         <span>
             <h2><a href="#" class="about">About Us</a></h2>
         </span>
-    </header>
+    </header>   
     <div class="settings">
         <form action="">
             <label for="white-username" class="white-username">White Username</label>
-            <input type="text" id="white-username" placeholder="">
+            <input type="text" id="white-username" placeholder="" maxlength="15">
             <label for="black-username" class="black-username">Black Username</label>
-            <input type="text" id="black-username" placeholder="">
+            <input type="text" id="black-username" placeholder="" maxlength="15">
             <label for="white-time" class="white-time">White Time</label>
             <input type="number" id="white-minutes" placeholder="min">
             <input type="number" id="white-inc" placeholder="inc">
@@ -41,10 +41,23 @@
             <label for="black-time" class="black-time">Black Time</label>
             <input type="number" id="black-minutes" placeholder="min">
             <input type="number" id="black-inc" placeholder="inc">
-            <button type="submit" id="start-game">Play in Person</button>
+            <button type="button" id="start-game">Play in Person</button>
         </form>
     </div>
-    <div id="board" class="hide"></div>    
+    <div class="loading hide">
+        <p>Loading...</p>
+    </div>
+    <div id="board" class="hide"></div>   
+    <div class="name-time hide">
+            <div class="white-player">
+                <h3 id="white-player-name"></h3>
+                <p id="white-player-time"></p>
+            </div>
+            <div class="black-player">
+                <h3 id="black-player-name"></h3>
+                <p id="black-player-time"></p>
+            </div>
+    </div> 
     <div id="promotion-popup" class="hidden">
         <div class="promotion-box">
             <h2>Choose Promotion</h2>

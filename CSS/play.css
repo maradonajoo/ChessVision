@@ -82,11 +82,13 @@ header{
 
 #board{ 
     position: absolute;
-    top: 30%;
+    top: 17%;
     left: 50%;
     transform: translateX(-50%);
-    width: 600px;
+    width: 600px;   
+    transition: opacity 0.5s ease;
 }
+
 
 #promotion-popup{
     position:fixed;
@@ -127,8 +129,10 @@ header{
 }
 
 .hide{
-    display: none !important;
+    opacity:0;
+    pointer-events:none;
 }
+
 
 .settings{
     position: absolute;
@@ -320,4 +324,77 @@ input::-webkit-outer-spin-button {
 input{
     font-size: large;
     font-weight: 700;
+}
+
+.loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 1.2rem;
+}
+
+.white-player{
+    background-color: rgb(197, 197, 197);
+    position: absolute;
+    bottom: 6%;    
+    left: 1.5%;
+    width: 27%;
+    color: rgb(0, 0, 0);
+    padding-left: 1%;
+    box-shadow: inset 0px 1px 5px rgb(0, 0, 0);
+    border-radius: 10px;
+}
+
+.black-player{
+    background-color: rgb(197, 197, 197);
+    position: absolute;
+    top: 20%;    
+    left: 1.5%;
+    width: 27%;
+    color: rgb(0, 0, 0);
+    padding-left: 1%;
+    box-shadow: inset 0px 1px 5px rgb(45, 45, 45);
+    border-radius: 10px;
+}
+
+#black-player-time{
+    position: absolute;
+    top: -10%;    
+    right: 4%;
+    height: 60%;
+    width: 30%;
+    color: rgb(0, 0, 0);
+    padding-left: 1%;
+    box-shadow: inset 0px 1px 5px rgb(45, 45, 45);
+    border-radius: 10px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
+}
+
+#white-player-time{
+    position: absolute;
+    top: -10%;    
+    right: 4%;
+    height: 60%;
+    width: 30%;
+    color: rgb(0, 0, 0);
+    padding-left: 1%;
+    box-shadow: inset 0px 1px 5px rgb(45, 45, 45);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    letter-spacing: 0.2rem;
 }

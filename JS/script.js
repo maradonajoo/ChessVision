@@ -1,49 +1,9 @@
-const whitemin = document.getElementById("white-minutes"), whiteInc = document.getElementById("white-inc");
-const blackmin = document.getElementById("black-minutes"), blackInc = document.getElementById("black-inc");
-
-whitemin.addEventListener("input", function () {
-    if (whitemin.value < 0) {
-        whitemin.value = 0;
-    }
-    else if (whitemin.value > 90) {
-        whitemin.value = 90;
-    }
-});
-
-blackmin.addEventListener("input", function () {
-    if (blackmin.value < 0) {
-        blackmin.value = 0;
-    }
-    else if (blackmin.value > 90) {
-        blackmin.value = 90;
-    }
-});
-
-whiteInc.addEventListener("input", function () {
-    if (whiteInc.value < 0) {
-        whiteInc.value = 0;
-    }
-    else if (whiteInc.value > 60) {
-        whiteInc.value = 60;
-    }
-});
-
-blackInc.addEventListener("input", function () {
-    if (blackInc.value < 0) {
-        blackInc.value = 0;
-    }
-    else if (blackInc.value > 60) {
-        blackInc.value = 60;
-    }   
-});
-
 const game = new Chess();
 
 let promotionMove = null;
 let waitingPromotion = false;
 
 const popup = document.getElementById("promotion-popup");
-
 const queen = document.getElementById("queen");
 const rook = document.getElementById("rook");
 const bishop = document.getElementById("bishop");
@@ -67,24 +27,25 @@ const board = Chessboard("board", {
 
     position: "start",
     draggable: true,
+
     pieceTheme: "../assets/pieces/{piece}.png",
 
     onDrop: function (source, target, piece) {
 
-        if (waitingPromotion) {
+        if(waitingPromotion){
             return "snapback";
         }
 
-        const legalMove = game.moves({ verbose: true }).find(move =>
+        const legalMove = game.moves({verbose:true}).find(move =>
             move.from === source &&
             move.to === target
         );
 
-        if (!legalMove) {
+        if(!legalMove){
             return "snapback";
         }
 
-        if (legalMove.flags.includes("p")) {
+        if(legalMove.flags.includes("p")){
 
             waitingPromotion = true;
 
@@ -100,41 +61,173 @@ const board = Chessboard("board", {
         }
 
         game.move({
-            from: source,
-            to: target
+            from:source,
+            to:target
+
         });
 
     },
 
-    onSnapEnd: function () {
+    onSnapEnd:function(){
+
         board.position(game.fen());
     }
+
 });
 
-document.querySelectorAll(".promotion-pieces img").forEach(function (img) {
+const settings = document.querySelector(".settings");
+const startBtn = document.getElementById("start-game");
+const boardElement = document.getElementById("board");
+const whiteName = document.getElementById("white-username");
+const blackName = document.getElementById("black-username");
+const whiteMinutes = document.getElementById("white-minutes");
+const blackMinutes = document.getElementById("black-minutes");
+const whiteInc = document.getElementById("white-inc");
+const blackInc = document.getElementById("black-inc");
 
-    img.addEventListener("click", function () {
+let gameSettings = {};
+
+whiteMinutes.addEventListener("input",function(){
+
+    if(this.value < 0)
+        this.value = 0;
+
+    if(this.value > 90)
+        this.value = 90;
+});
+
+blackMinutes.addEventListener("input",function(){
+
+    if(this.value < 0)
+        this.value = 0;
+
+    if(this.value > 90)
+        this.value = 90;
+});
+
+whiteInc.addEventListener("input",function(){
+
+    if(this.value < 0)
+        this.value = 0;
+
+    if(this.value > 60)
+        this.value = 60;
+});
+
+blackInc.addEventListener("input",function(){
+
+    if(this.value < 0)
+        this.value = 0;
+
+    if(this.value > 60)
+        this.value = 60;
+
+});
+
+function startGame(event){
+
+    event.preventDefault();
+
+    if(
+        whiteName.value.trim()==="" ||
+
+        blackName.value.trim()==="" ||
+
+        whiteMinutes.value==="" ||
+
+        blackMinutes.value==="" ||
+
+        whiteInc.value==="" ||
+
+        blackInc.value===""
+    ){
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    gameSettings = {
+
+        white:{
+
+            name:whiteName.value,
+
+            minutes:Number(whiteMinutes.value),
+
+            increment:Number(whiteInc.value)
+
+        },
+
+        black:{
+
+            name:blackName.value,
+
+            minutes:Number(blackMinutes.value),
+
+            increment:Number(blackInc.value)
+
+        }
+
+    };
+
+    console.log(gameSettings);
+
+    settings.classList.add("hide");
+
+    document.querySelector(".loading").classList.remove("hide");
+
+    setTimeout(function(){document.querySelector(".loading").classList.add("hide");},10000);
+
+    setTimeout(function(){boardElement.classList.remove("hide");},10000);
+
+    setTimeout(function(){document.querySelector(".name-time").classList.remove("hide");},10000);
+
+    function formatTime(minutes){
+        return `${minutes}:00`;
+    }
+
+    document.getElementById("white-player-name").textContent = gameSettings.white.name;
+    document.getElementById("black-player-name").textContent = gameSettings.black.name;
+    document.getElementById("white-player-time").textContent = formatTime(gameSettings.white.minutes);
+    document.getElementById("black-player-time").textContent = formatTime(gameSettings.black.minutes);
+}
+
+startBtn.addEventListener("click",startGame);
+
+document.querySelectorAll(".promotion-pieces img").forEach(function(img){
+
+    img.addEventListener("click",function(){
 
         const promotion = this.dataset.piece;
 
         const move = game.move({
-            from: promotionMove.from,
-            to: promotionMove.to,
-            promotion: promotion
+
+            from:promotionMove.from,
+
+            to:promotionMove.to,
+
+            promotion:promotion
         });
 
-        if (move === null) {
-            waitingPromotion = false;
-            promotionMove = null;
+        if(move === null){
+
+            waitingPromotion=false;
+
+            promotionMove=null;
+
             hidePromotion();
+
             return;
+
         }
 
         board.position(game.fen());
 
-        waitingPromotion = false;
-        promotionMove = null;
+        waitingPromotion=false;
+
+        promotionMove=null;
 
         hidePromotion();
+
     });
+
 });
